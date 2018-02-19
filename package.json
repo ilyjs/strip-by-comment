@@ -1,11 +1,31 @@
 {
   "name": "strip-by-comment",
   "version": "0.1.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
+    "build": "webpack",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "ilyjs",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ilyjs/strip-by-comment.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ilyjs/strip-by-comment/issues"
+  },
+  "homepage": "https://github.com/ilyjs/strip-by-comment#readme",
+  "description": "",
+  "dependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "uglifyjs-webpack-plugin": "^1.2.0",
+    "webpack": "^3.11.0"
+  },
+  "devDependencies": {
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-stage-2": "^6.24.1"
+  }
 }

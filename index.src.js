@@ -1,4 +1,4 @@
-export default strip = text => {
+export default stripByComment = text => {
   let regular =  new RegExp( /\/\* strip-start[\s\S]*?strip-end \*\//g);
   let regularBrace = "{" + regular + "}";
   let b = /\/\* strip-start[\s\S]*?strip-end \*\//g;
