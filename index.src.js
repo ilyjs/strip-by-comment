@@ -1,9 +1,8 @@
 export default stripByComment = text => {
-  let regular =  new RegExp( /\/\* strip-start[\s\S]*?strip-end \*\//g);
-  let regularBrace = "{" + regular + "}";
-  let b = /\/\* strip-start[\s\S]*?strip-end \*\//g;
-  let result = text.replace(a, "");
-  result = result.replace(b, "");
+  let regular = /\/\* strip-start[\s\S]*?strip-end \*\//g;
+  let regularBrace = new RegExp("\\\{"+regular.source+"\\\}", "g");
+  let result = text.replace(regular, "");
+  result = result.replace(regularBrace, "");
   return result;
 }
 
