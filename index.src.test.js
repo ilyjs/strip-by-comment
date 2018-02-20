@@ -1,25 +1,20 @@
-import stripByComment from 'index.src';
-
+const stripByComment = require('./index.src.js');
 
 describe('strip', () => {
 
   it('simple test', () => {
-    let a = [];
-    a[1] = `/* strip-start */ 1234 /* strip-end */`;
+    let a = `/* strip-start */ 1234 /* strip-end */`;
     expect(stripByComment(a)).toBe("");
   });
 
   it('simple test width {}', () => {
-    let a = [];
-    a[1] = `{/* strip-start */} 1234 {/* strip-end */}`;
+    let a = `{/* strip-start */} 1234 {/* strip-end */}`;
     expect(stripByComment(a)).toBe("");
   });
 
   it('test for spaces ', () => {
-    let a = [];
-    a[1] =
-      `1
-    /* strip-start */
+    let a =
+      `1/* strip-start */
     1234 
     /* strip-end */
     1`;
@@ -30,12 +25,10 @@ describe('strip', () => {
   });
 
   it('test for spaces width {}', () => {
-    let a = [];
-    a[1] =
-      `1
-    { /* strip-start */}
+    let a =
+      `1{/* strip-start */}
     1234 
-    { /* strip-end */}
+    {/* strip-end */}
     1`;
     let b =
       `1
