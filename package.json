@@ -4,7 +4,13 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "js",
+      "jsx"
+    ]
   },
   "author": "ilyjs",
   "license": "ISC",
@@ -18,14 +24,19 @@
   "homepage": "https://github.com/ilyjs/strip-by-comment#readme",
   "description": "",
   "dependencies": {
-    "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
+    "babel-plugin-syntax-dynamic-import": "^6.18.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
     "uglifyjs-webpack-plugin": "^1.2.0",
     "webpack": "^3.11.0"
   },
   "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-jest": "^22.2.2",
     "babel-plugin-add-module-exports": "^0.2.1",
     "babel-preset-env": "^1.6.1",
-    "babel-preset-stage-2": "^6.24.1"
+    "babel-preset-stage-2": "^6.24.1",
+    "jest": "^22.3.0",
+    "regenerator-runtime": "^0.11.1"
   }
 }

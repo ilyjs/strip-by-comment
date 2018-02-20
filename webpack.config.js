@@ -9,16 +9,21 @@ module.exports = function () {
       // Array syntax to workaround https://github.com/webpack/webpack/issues/300
       'index': ['./index.src.js'],
     },
+
     module: {
       rules: [
         {
           test: /\.js$/,
 
           use: {
+            "transform": {
+              "^.+\\.js?$": "babel-jest"
+            },
+
             loader: 'babel-loader',
             options: {
               presets: ['env', 'stage-2'],
-              plugins: ["add-module-exports"]
+              plugins: ["add-module-exports","syntax-dynamic-import", "transform-runtime"]
             }
           }
         }
