@@ -16,9 +16,6 @@ module.exports = function () {
           test: /\.js$/,
 
           use: {
-            "transform": {
-              "^.+\\.js?$": "babel-jest"
-            },
 
             loader: 'babel-loader',
             options: {
